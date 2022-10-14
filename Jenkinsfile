@@ -33,7 +33,8 @@ pipeline {
                 echo 'Deploy to prod'
             }
         }
-}    post {
+    }
+ post {
         failure {
             echo 'failure'
         }
