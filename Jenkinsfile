@@ -1,4 +1,4 @@
-Pipeline {
+pipeline {
     agent any
     stages {
         stage('Build') {
@@ -24,12 +24,12 @@ Pipeline {
         }
         stage('Deploy to QA') {
             steps {
-                echo 'Deploy to QA'
+                echo ('Deploy to QA')
             }
         }
         stage('Deploy to prod') {
             steps {
-                echo 'Deploy to prod'
+                echo ('Deploy to prod')
             }
         }
     post {
@@ -44,7 +44,7 @@ Pipeline {
         }
         always { 
             echo 'I will always say Hello again!'
+             }
         }
-    }
-  }    
+    }    
 }                                                           
