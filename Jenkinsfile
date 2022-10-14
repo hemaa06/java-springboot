@@ -33,12 +33,12 @@ pipeline {
                 echo 'Deploy to prod'
             }
         }
-    post {
-        Failure {
+}    post {
+        failure {
             echo 'failure'
         }
-        sucess{
-            echo 'sucess'
+        success{
+            echo 'success'
         } 
         abort {
             echo 'abort'
@@ -49,4 +49,4 @@ pipeline {
     }
  
   }    
-}                                                           
+                                                          
