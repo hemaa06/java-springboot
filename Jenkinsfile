@@ -18,7 +18,6 @@ pipeline {
             }
         }
 
-    }
     stage('Push to artifactory') {
             steps {
                 echo 'Push to artifactory'
@@ -34,12 +33,12 @@ pipeline {
                 echo 'Deploy to prod'
             }
         }
-    post {
-        Failure {
+}    post {
+        failure {
             echo 'failure'
         }
-        sucess{
-            echo 'sucess'
+        success{
+            echo 'success'
         } 
         abort {
             echo 'abort'
@@ -48,3 +47,6 @@ pipeline {
             echo 'I will always say Hello again!'
         }
     }
+ 
+  }    
+                                                          
