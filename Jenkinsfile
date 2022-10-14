@@ -32,6 +32,7 @@ pipeline {
                 echo ('Deploy to prod')
             }
         }
+    }
     post {
         Failure {
             echo 'failure'
@@ -46,5 +47,5 @@ pipeline {
             echo 'I will always say Hello again!'
              }
         }
-    }    
+        
 }                                                           
