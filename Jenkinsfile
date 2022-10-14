@@ -17,9 +17,7 @@ pipeline {
                 echo 'Sonar Qube'
             }
         }
-
-    }
-    stage('Push to artifactory') {
+           stage('Push to artifactory') {
             steps {
                 echo 'Push to artifactory'
             }
@@ -48,3 +46,5 @@ pipeline {
             echo 'I will always say Hello again!'
         }
     }
+  }    
+}                                                           
