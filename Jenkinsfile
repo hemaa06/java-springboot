@@ -1,18 +1,21 @@
 pipeline {
     agent any
-    stages {
-        stage('Build') {
-            steps {
+    stages{
+        stage('Build') 
+        {   
+              steps {
                 echo 'Build'
             }
         }
-        stage('Test') {
+        stage('Test')
+         {
             steps {
                 echo 'Test'
             }
         }
 
-        stage('SonarQube') {
+        stage('SonarQube')
+         {
             steps {
                 echo 'Sonar Qube'
             }
