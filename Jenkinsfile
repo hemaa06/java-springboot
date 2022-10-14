@@ -34,14 +34,14 @@ pipeline {
         }
     }
     post {
-        Failure {
+        failure {
             echo 'failure'
         }
         sucess{
-            echo 'sucess'
+            echo 'success'
         } 
-        abort {
-            echo 'abort'
+        aborted {
+            echo 'aborted'
         }
         always { 
             echo 'I will always say Hello again!'
