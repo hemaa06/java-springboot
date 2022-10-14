@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello World'
+                echo 'Build'
             }
         }
         stage('Test') {
@@ -12,7 +12,7 @@ pipeline {
             }
         }
 
-        stage('Sonar Qube') {
+        stage('SonarQube') {
             steps {
                 echo 'Sonar Qube'
             }
