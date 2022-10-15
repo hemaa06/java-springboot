@@ -18,7 +18,7 @@ pipeline {
             }
         }
 
-    stage('Push to artifactory') {
+        stage('Push to artifactory') {
             steps {
                 echo 'Push to artifactory'
             }
@@ -33,7 +33,9 @@ pipeline {
                 echo 'Deploy to prod'
             }
         }
-}    post {
+
+    } 
+    post {
         failure {
             echo 'failure'
         }
@@ -48,5 +50,5 @@ pipeline {
         }
     }
  
-  }    
+}    
                                                           
