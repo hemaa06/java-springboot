@@ -42,7 +42,7 @@ pipeline {
         success{
             echo 'success'
         } 
-        abort {
+        aborted {
             echo 'abort'
         }
         always { 
