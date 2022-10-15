@@ -39,7 +39,7 @@ pipeline {
         failure {
             echo 'failure'
         }
-        success{
+        success {
             echo 'success'
         } 
         aborted {
