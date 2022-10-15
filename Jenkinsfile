@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-   stages{
+    stages{
         stage('Build') {
             steps {
                 echo 'build'
@@ -19,7 +19,7 @@ pipeline {
             }
         }
 
-    stage('Push to artifactory') {
+        stage('Push to artifactory') {
             steps {
                 echo 'Push to artifactory'
             }
@@ -35,7 +35,7 @@ pipeline {
             }
         }
     }
- post {
+    post {
         failure {
             echo 'failure'
         }
