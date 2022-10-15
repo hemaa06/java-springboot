@@ -13,6 +13,7 @@ pipeline {
                 echo 'Deploy'
             }
         }    
+    }    
     post{
         failure{
             echo 'Build faild'
@@ -22,5 +23,5 @@ pipeline {
         }   
             
     }      
-    }
+    
 }                                                          
