@@ -1,54 +1,52 @@
 pipeline {
     agent any
+    stages {
 
-    stages{
         stage('Build') {
             steps {
-                echo 'build'
+                echo 'Build'
+                sh 'mvn clean package'             
             }
         }
         stage('Test') {
             steps {
                 echo 'Test'
+                // sh 'mvn test'
             }
         }
-
-        stage('Sonar Qube') {
+        stage('Sonar Analysis') {
             steps {
-                echo 'Sonar Qube'
+                echo 'SOnar Qube'
+                sh "mvn sonar:sonar -Dsonar.projectKey=Raghupatik_java-springboot -Dsonar.sources=src/main/java/"
             }
         }
-
         stage('Push to artifactory') {
             steps {
                 echo 'Push to artifactory'
             }
         }
+
         stage('Deploy to QA') {
             steps {
                 echo 'Deploy to QA'
             }
         }
-        stage('Deploy to prod') {
+
+        stage('Deploy to Prod') {
             steps {
-                echo 'Deploy to prod'
+                echo 'Deploy to Prod'
             }
         }
     }
     post {
       failure {
-        echo 'failure'
+        echo 'Failed'
       }
       success {
-        echo 'success'
-      } 
-      aborted {
-        echo 'abort'
+        echo 'Success'
       }
-      always { 
-        echo 'I will always say Hello again!'
+      aborted {
+        echo 'aborted'
       }
     }
- 
-}    
-                                                          
+}
