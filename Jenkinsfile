@@ -1,43 +1,29 @@
 pipeline {
     agent any
     stages {
-
-        stage('Build') {
+         stage('Test') {
             steps {
-                echo 'Build'
+                
                 sh 'mvn clean package'             
             }
         }
-        stage('Test') {
+               
+        stage('package') {
             steps {
-                echo 'Test'
-                // sh 'mvn test'
+            
+                sh 'mvn  clean package -Dsmaven.test.skip=true'
             }
         }
-        stage('Sonar Analysis') {
+       
+        stage('Deploy war') {
             steps {
-                echo 'SOnar Qube'
-                sh "mvn sonar:sonar -Dsonar.projectKey=Raghupatik_java-springboot -Dsonar.sources=src/main/java/"
-            }
-        }
-        stage('Push to artifactory') {
-            steps {
-                echo 'Push to artifactory'
+                echo 'Deploy war'
             }
         }
 
-        stage('Deploy to QA') {
-            steps {
-                echo 'Deploy to QA'
-            }
+                    
         }
-
-        stage('Deploy to Prod') {
-            steps {
-                echo 'Deploy to Prod'
-            }
-        }
-    }
+    
     post {
       failure {
         echo 'Failed'
@@ -45,8 +31,6 @@ pipeline {
       success {
         echo 'Success'
       }
-      aborted {
-        echo 'aborted'
+    
       }
     }
-}
