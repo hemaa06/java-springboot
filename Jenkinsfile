@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Hello World'
+                echo 'Build'
+    
             }
         }
         stage('Test') {
@@ -46,7 +47,7 @@ pipeline {
             echo 'aborted'
         }
         always { 
-            echo 'I will always say Hello again!'
+            echo 'always'
         }
     }
  
