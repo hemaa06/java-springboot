@@ -12,7 +12,7 @@ pipeline {
             }
         }
 
-        stage('Sonar analasys') {
+        stage('Sonar analysis') {
             steps {
                 echo 'Sonar Qube'
             }
